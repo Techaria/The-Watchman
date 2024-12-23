@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchMan - Articles</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="/articles">Home</a></li>
+                    <li><a href="/index.html">Blogger</a></li>
+                    <li><a href="/account">Account</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="content">
+            <header>
+                <h1>The WatchMan - Latest Articles</h1>
+            </header>
+            <nav class="category-nav">
+                <ul>
+                    <li><a href="/articles?category=Trending">Trending</a></li>
+                    <li><a href="/articles?category=Business">Business</a></li>
+                    <li><a href="/articles?category=Technology">Technology</a></li>
+                    <li><a href="/articles?category=Sports">Sports</a></li>
+                    <li><a href="/articles?category=Politics">Politics</a></li>
+                    <li><a href="/articles?category=Finance">Finance</a></li>
+                    <li><a href="/articles?category=Discovery">Discovery</a></li>
+                    <li><a href="/articles?category=Entertainment">World</a></li>
+                    <li><a href="/articles?category=Entertainment">Entertainment</a></li>
+                </ul>
+            </nav>
+            <main>
+                <section id="articles">
+                    <% articles.forEach(article => { %>
+                        <div class="article">
+                            <h2><a href="/article/<%= article.id %>"><%= article.title %></a></h2>
+                            <p><strong>Category:</strong> <%= article.category %></p>
+                            <p><%= article.content.substring(0, 100) %>...</p>
+                            <% if (article.image) { %>
+                                <img src="/uploads/<%= article.image %>" alt="Article Image" style="width:200px; height:auto;">
+                            <% } %>
+                            <p><em>Posted on <%= new Date(article.createdAt).toLocaleString() %></em></p>
+                        </div>
+                        <hr>
+                    <% }) %>
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+    <!--<footer>
+        <p>Contact us: <a href="mailto:thewatchman@gmail.com">thewatchman@gmail.com</a></p>
+    </footer> -->
+
+</html>

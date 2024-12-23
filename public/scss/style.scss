@@ -1,0 +1,195 @@
+// Variables
+$primary-color: #2c3e50;
+$secondary-color: #2980b9;
+$accent-color: #ecf0f1;
+$font-family: 'Roboto', sans-serif;
+$transition-time: 0.3s;
+
+// Global Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    background-color: $accent-color;
+    color: $primary-color;
+    line-height: 1.6;
+}
+
+// Header
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: $primary-color;
+    color: $accent-color;
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: $secondary-color;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color $transition-time;
+    
+    &:hover {
+        background-color: lighten($secondary-color, 10%);
+    }
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $primary-color;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    a {
+        color: $accent-color;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color $transition-time;
+
+        &:hover {
+            background-color: $secondary-color;
+        }
+    }
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+// Main Content
+main {
+    padding: 40px;
+    background-color: lighten($accent-color, 5%);
+}
+
+// News Feed Section
+#news-feed {
+    margin-bottom: 40px;
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .news-item {
+        display: flex;
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: $accent-color;
+        border: 2px solid $primary-color;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow $transition-time;
+
+        &:hover {
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            max-width: 200px;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+
+        .news-content {
+            h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+// Upload Content Section
+#upload-content {
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: $accent-color;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"], select, textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid $primary-color;
+            font-size: 1rem;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: $secondary-color;
+            color: white;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color $transition-time;
+
+            &:hover {
+                background-color: lighten($secondary-color, 10%);
+            }
+        }
+    }
+}
+
+// Footer
+footer {
+    padding: 20px;
+    background-color: $primary-color;
+    color: $accent-color;
+    text-align: center;
+    font-size: 0.9rem;
+
+    a {
+        color: $secondary-color;
+        text-decoration: none;
+        transition: color $transition-time;
+
+        &:hover {
+            color: lighten($secondary-color, 10%);
+        }
+    }
+}

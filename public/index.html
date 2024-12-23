@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchMan - Upload Content</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <main>
+        <section id="upload-content">
+            <div class="container">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div class="section">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="section">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="world">Technology</option>
+                    <option value="business">Business</option>
+                    <option value="technology">Politics</option>
+                    <option value="sports">Entertainment</option>
+                    <option value="sports">Finance</option>
+                    <option value="sports">Discovery</option>
+                    <option value="sports">Sports</option>
+                    <option value="sports">Trending</option>
+                    <option value="sports">World</option>
+                </select>
+                </div>
+
+                <div class="section">
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" rows="4" required></textarea>
+                </div>
+
+                <div class="section">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+                </div>
+
+                <div class="section">
+                <label for="video">Upload Video:</label>
+                <input type="file" id="video" name="video" accept="video/*">
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        </section>
+    </main>
+    <footer>
+        <p>Contact us: <a href="mailto:thewatchman@gmail.com">thewatchman@gmail.com</a></p>
+    </footer>
+</body>
+</html>
